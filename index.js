@@ -32,7 +32,7 @@ if (!algoliaAppId || !algoliaAdminKey || !algoliaSearchKey) {
 const algoliaClient = algoliasearch(algoliaAppId, algoliaAdminKey);
 const recClient = recommendClient(algoliaAppId, algoliaAdminKey);
 
-const express = require("express");
+// const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
