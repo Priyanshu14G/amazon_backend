@@ -199,6 +199,11 @@ app.get('/api/recommend/trending', async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
+});
+
+
 app.post("/api/purchase", requireAuth, async (req, res) => {
   try {
     const { userId } = req.auth;
