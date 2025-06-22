@@ -36,6 +36,11 @@ console.log("✅ Backend initialized");
 
 // Routes
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
+});
+
+
 app.get("/api/products", async (req, res) => {
   try {
     const raw = fs.readFileSync("products.json", "utf8");
