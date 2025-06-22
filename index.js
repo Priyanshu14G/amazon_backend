@@ -32,8 +32,9 @@ if (!algoliaAppId || !algoliaAdminKey || !algoliaSearchKey) {
 const algoliaClient = algoliasearch(algoliaAppId, algoliaAdminKey);
 const recClient = recommendClient(algoliaAppId, algoliaAdminKey);
 
+const express = require("express");
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
@@ -259,7 +260,7 @@ app.delete("/api/purchase/:productCode", requireAuth, async (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at ${process.env.VITE_REACT_APP_FRONTEND_BASEURL}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
 
 //path update
